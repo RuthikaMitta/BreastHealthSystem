@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Breast Health Monitor</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Firebase Config -->
+  <script type="module" src="firebase-config.js"></script>
+
+  <!-- Firebase Logic & UI Scripts -->
+  <script type="module" src="firebase.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">💗 SenseHer</div>
+      <nav class="nav">
+        <a href="#" class="nav-item active">Overview</a>
+        <a href="live data/index.html" class="nav-item">Live Data</a>
+        <a href="#" class="nav-item">Awareness</a>
+        <a href="profile/index.html" class="nav-item">Profile</a>
+        <a href="#" class="nav-item">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <input type="text" placeholder="Search..." class="search-box" />
+        <div class="auth-buttons">
+          <button class="signin-btn" onclick="showLogin()">Sign In</button>
+          <div class="profile-container">
+          <button class="profile-btn" id="profileBtn" style="display:none;">👤 Profile</button>            
+          <div class="profile-dropdown" id="profileDropdown">
+            <div class="profile-info">
+              <h3 id="profileName">John Doe</h3>
+              <p>Age: <span id="profileAge">25</span></p>
+              <p>Phone: <span id="profilePhone">+1234567890</span></p>
+              <p>Email: <span id="profileEmail">john@example.com</span></p>
+              <p>Location: <span id="profileLocation">New York, USA</span></p>
+            </div>
+          </div>
+        </div>            
+        </div>
+      </header>
+
+      <section class="content">
+        <h1>Breast Health Monitoring</h1>
+        <p>
+          A smart solution for early detection and awareness of breast abnormalities. Using sensors and real-time monitoring, this platform empowers users with continuous health insights and proactive alerts.
+        </p>
+        <div class="buttons">
+          <button class="primary-btn">Start Monitoring</button>
+          <button class="secondary-btn">Learn Awareness</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="left-side">
+        <img src="https://i.ibb.co/zZ9zK2V/person.png" alt="login illustration" />
+      </div>
+      <div class="right-side">
+        <h2>Sign in</h2>
+        <input type="email" id="email" placeholder="✉ Email" />
+        <input type="password" id="password" placeholder="🔒 Password" />
+        <label><input type="checkbox" /> Remember me</label>
+        <button onclick="loginUser()">Log in</button>
+        <p><a href="#">Create an account</a></p>
+        <p>Or login with:</p>
+        <div class="social-buttons">
+          <button onclick="socialLogin('facebook')">f</button>
+          <button onclick="socialLogin('twitter')">t</button>
+          <button onclick="socialLogin('google')">G</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<script type="module" src="script.js"></script>

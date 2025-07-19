@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Sensor Monitoring</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div class="top-left-btn">
+        <button onclick="goBack()">← Back</button>
+      </div>
+  <div class="container">
+    <h1>Live Sensor Monitoring</h1>
+    <div class="cards">
+      <div class="card">
+        <h3>Body Temperature (MLX90614)</h3>
+        <p id="temperature">-- °C</p>
+      </div>
+      <div class="card">
+        <h3>Heart Rate (Pulse Sensor)</h3>
+        <p id="heartrate">-- bpm</p>
+      </div>
+      <div class="card">
+        <h3>SpO₂ (MAX30102)</h3>
+        <p id="spo2">-- %</p>
+      </div>
+      <div class="card">
+        <h3>Skin Resistance (GSR)</h3>
+        <p id="gsr">--</p>
+      </div>
+      <div class="card">
+        <h3>Pressure (FSR)</h3>
+        <p id="fsr">--</p>
+      </div>
+      <div class="card">
+        <h3>Body Temp Backup (DS18B20)</h3>
+        <p id="ds18b20">-- °C</p>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function goBack() {
+      window.location.href = "../index.html"; // Adjust path if needed
+    }
+  </script>
+
+  
+</body>
+</html>
